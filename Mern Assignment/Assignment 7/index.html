@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ammar Anees - CSS Grid Practice Pack">
+  <title>Grid Practice Pack | Ammar Anees</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-heading">
+      <p class="eyebrow">BTECH YEAR 1&nbsp; / &nbsp;HTML &amp; CSS&nbsp;</p>
+      <h1>Grid Practice Pack</h1>
+      <p class="subtitle">Weeks 7–9 · Three separate page outputs · Illustrative expected output</p>
+    </header>
+
+    <!-- 01 / gallery.html -->
+    <section class="assignment-section gallery-section" id="gallery">
+      <h2 class="section-label">01 / gallery.html · At least 9 images</h2>
+
+      <div class="gallery-grid">
+        <div class="gallery-image landscape landscape-1" role="img" aria-label="Green mountain peaks beneath a warm morning sun"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-2" role="img" aria-label="Layered hills in a peaceful green valley"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-3" role="img" aria-label="Sunlit mountain landscape with distant hills"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-4" role="img" aria-label="Soft green hills under a pale yellow sun"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-5" role="img" aria-label="Mountain ridge and green valley in daylight"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-6" role="img" aria-label="Two overlapping green mountain ranges"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-7" role="img" aria-label="Quiet countryside hills in a sunny landscape"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-8" role="img" aria-label="Illustrated mountain valley with a glowing sun"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+        <div class="gallery-image landscape landscape-9" role="img" aria-label="Green mountain peaks and a bright sky"><span class="sun"></span><span class="mountain mountain-back"></span><span class="mountain mountain-front"></span></div>
+      </div>
+    </section>
+
+    <!-- 02 / product-grid.html -->
+    <section class="assignment-section products-section" id="products">
+      <h2 class="section-label">02 / product-grid.html · Automatic column reflow</h2>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <h3>Product 1</h3>
+          <p>Campus essential <span>·</span> ₹299</p>
+        </article>
+        <article class="product-card">
+          <h3>Product 2</h3>
+          <p>Campus essential <span>·</span> ₹399</p>
+        </article>
+        <article class="product-card">
+          <h3>Product 3</h3>
+          <p>Campus essential <span>·</span> ₹499</p>
+        </article>
+        <article class="product-card">
+          <h3>Product 4</h3>
+          <p>Campus essential <span>·</span> ₹599</p>
+        </article>
+        <article class="product-card">
+          <h3>Product 5</h3>
+          <p>Campus essential <span>·</span> ₹699</p>
+        </article>
+        <article class="product-card">
+          <h3>Product 6</h3>
+          <p>Campus essential <span>·</span> ₹799</p>
+        </article>
+      </div>
+
+      <h3 class="grid-formula">repeat(auto-fit, minmax(200px, 1fr))</h3>
+      <p class="grid-explanation">More room → more columns. Less room → fewer columns.</p>
+    </section>
+
+    <!-- 03 / dashboard.html -->
+    <section class="assignment-section dashboard-section" id="dashboard">
+      <h2 class="section-label">03 / dashboard.html · Named grid areas</h2>
+
+      <div class="dashboard">
+        <header class="dashboard-header">
+          <h3>HEADER / STUDENT DASHBOARD</h3>
+          <nav aria-label="Dashboard navigation">
+            <a href="#gallery">Home</a>
+            <a href="#dashboard">About</a>
+            <a href="#products">Services</a>
+            <a href="mailto:rehmanhilal483@gmail.com">Contact</a>
+          </nav>
+        </header>
+
+        <aside class="dashboard-sidebar">
+          <h3>SIDEBAR</h3>
+          <nav aria-label="Sidebar navigation">
+            <a href="#dashboard">Overview</a>
+            <a href="#products">Courses</a>
+            <a href="#gallery">Assignments</a>
+            <a href="#student-details">Settings</a>
+          </nav>
+        </aside>
+
+        <section class="dashboard-main">
+          <h2>MAIN / Learning overview</h2>
+          <div class="learning-cards">
+            <article class="learning-card">
+              <h3>HTML</h3>
+              <p>8 lessons</p>
+            </article>
+            <article class="learning-card">
+              <h3>CSS</h3>
+              <p>12 lessons</p>
+            </article>
+            <article class="learning-card">
+              <h3>Projects</h3>
+              <p>3 active</p>
+            </article>
+          </div>
+          <p class="activity-message">Your learning activity appears here.</p>
+        </section>
+
+        <footer class="dashboard-footer">
+          <h3>FOOTER / CAMPUS LEARNING PORTAL</h3>
+          <nav aria-label="Footer navigation">
+            <a href="#gallery">Home</a>
+            <a href="#dashboard">About</a>
+            <a href="#products">Services</a>
+            <a href="mailto:rehmanhilal483@gmail.com">Contact</a>
+          </nav>
+        </footer>
+      </div>
+    </section>
+
+    <aside class="assignment-note" id="student-details">
+      Use <strong>Grid columns</strong>, <strong>gap</strong>, <strong>fr units</strong> and
+      <strong>named grid areas</strong>. The gallery uses nine illustrated landscapes with
+      meaningful alt descriptions.
+      <div class="student-details">
+        <span><strong>Student:</strong> Ammar Anees</span>
+        <span><strong>Student ID:</strong> BCS2026271</span>
+        <span><strong>Email:</strong> <a href="mailto:rehmanhilal483@gmail.com">rehmanhilal483@gmail.com</a></span>
+      </div>
+    </aside>
+
+    <footer class="page-footer">
+      Sample content and design · BTech Year 1 · HTML &amp; CSS ·</footer>
+  </main>
+</body>
+</html>

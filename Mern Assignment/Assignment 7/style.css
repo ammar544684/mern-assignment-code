@@ -1,0 +1,482 @@
+/* =========================================================
+   GRID PRACTICE PACK — ASSIGNMENT 08
+   Student: Ammar Anees | Student ID: BCS2026271
+   One external stylesheet for the gallery, product grid
+   and student dashboard.
+   ========================================================= */
+
+:root {
+  --page-bg: #edf3f6;
+  --ink: #1d3749;
+  --muted: #657581;
+  --teal: #173f43;
+  --teal-light: #246d6b;
+  --mint: #dcebe1;
+  --card-bg: #f5f8f7;
+  --white: #ffffff;
+  --border: #cbd7dc;
+  --sun-color: #fff0c5;
+  --hill-light: #80a99e;
+  --hill-dark: #416f69;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid #d7b35f;
+  outline-offset: 3px;
+}
+
+.page {
+  width: min(1120px, calc(100% - 60px));
+  margin: 28px auto 26px;
+}
+
+.page-heading {
+  margin-bottom: 25px;
+}
+
+.eyebrow,
+.section-label {
+  color: var(--teal-light);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.65px;
+}
+
+.page-heading h1 {
+  margin-top: 6px;
+  font-size: clamp(29px, 4vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.assignment-section {
+  margin-top: 25px;
+}
+
+.section-label {
+  margin-bottom: 13px;
+}
+
+/* 01 — gallery.html
+   CSS Grid creates three equal columns and three rows.
+*/
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.gallery-image {
+  position: relative;
+  min-height: 112px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--mint);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.gallery-image:hover {
+  z-index: 1;
+  transform: scale(1.025);
+  box-shadow: 0 7px 18px rgba(29, 55, 73, 0.14);
+}
+
+.gallery-image .sun {
+  position: absolute;
+  top: 11px;
+  right: 15%;
+  width: 38px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--sun-color);
+}
+
+.gallery-image .mountain {
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 0;
+}
+
+.mountain-back {
+  left: -3%;
+  border-right: 105px solid transparent;
+  border-bottom: 70px solid var(--hill-light);
+  border-left: 105px solid transparent;
+}
+
+.mountain-front {
+  right: -4%;
+  border-right: 105px solid transparent;
+  border-bottom: 54px solid var(--hill-dark);
+  border-left: 105px solid transparent;
+}
+
+/* Small colour variations help the nine illustrations feel distinct. */
+.landscape-2 { background: #e0ece3; }
+.landscape-3 { background: #dce9df; }
+.landscape-4 { background: #e4eee5; }
+.landscape-5 { background: #dcebe2; }
+.landscape-6 { background: #e1ede5; }
+.landscape-7 { background: #d9e8df; }
+.landscape-8 { background: #e3ede5; }
+.landscape-9 { background: #dcebe1; }
+
+.landscape-2 .mountain-back,
+.landscape-5 .mountain-back,
+.landscape-8 .mountain-back {
+  border-bottom-color: #79a397;
+}
+
+.landscape-3 .mountain-front,
+.landscape-6 .mountain-front,
+.landscape-9 .mountain-front {
+  border-bottom-color: #47756d;
+}
+
+/* 02 — product-grid.html
+   auto-fit and minmax automatically adjust column count.
+*/
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.product-card {
+  min-height: 104px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card-bg);
+  box-shadow: 0 1px 2px rgba(29, 55, 73, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 16px rgba(29, 55, 73, 0.1);
+}
+
+.product-card h3 {
+  margin-bottom: 7px;
+  font-size: 16px;
+}
+
+.product-card p {
+  color: #354b59;
+  font-size: 13px;
+}
+
+.product-card p span {
+  color: var(--teal-light);
+  font-weight: 700;
+}
+
+.grid-formula {
+  margin-top: 27px;
+  color: var(--teal-light);
+  font-size: 17px;
+}
+
+.grid-explanation {
+  margin-top: 7px;
+  color: #455b69;
+  font-size: 15px;
+}
+
+/* 03 — dashboard.html
+   Named grid areas define header, sidebar, main and footer.
+*/
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-rows: 48px minmax(330px, auto) 48px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 11px;
+}
+
+.dashboard-header,
+.dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 14px;
+  background: var(--teal);
+  color: var(--white);
+}
+
+.dashboard-header {
+  grid-area: header;
+}
+
+.dashboard-footer {
+  grid-area: footer;
+}
+
+.dashboard-header h3,
+.dashboard-footer h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.dashboard-header nav,
+.dashboard-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dashboard-header nav a,
+.dashboard-footer nav a {
+  color: #f4f8f7;
+  font-size: 11px;
+  transition: color 160ms ease;
+}
+
+.dashboard-header nav a:hover,
+.dashboard-footer nav a:hover {
+  color: var(--sun-color);
+}
+
+.dashboard-sidebar {
+  grid-area: sidebar;
+  padding: 16px 18px;
+  border: 1px solid #cfdddc;
+  border-radius: 9px;
+  background: #dce9e7;
+}
+
+.dashboard-sidebar h3 {
+  margin-bottom: 23px;
+  font-size: 16px;
+}
+
+.dashboard-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.dashboard-sidebar nav a {
+  color: #354e5b;
+  font-size: 15px;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.dashboard-sidebar nav a:hover {
+  color: var(--teal-light);
+  transform: translateX(3px);
+}
+
+.dashboard-main {
+  grid-area: main;
+  padding: 15px 20px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--white);
+}
+
+.dashboard-main > h2 {
+  margin-bottom: 22px;
+  font-size: 19px;
+}
+
+.learning-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.learning-card {
+  min-height: 112px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card-bg);
+}
+
+.learning-card h3 {
+  margin-bottom: 7px;
+  font-size: 16px;
+}
+
+.learning-card p {
+  color: #455b69;
+  font-size: 13px;
+}
+
+.activity-message {
+  margin-top: 27px;
+  color: #455b69;
+  font-size: 14px;
+}
+
+/* Assignment reminder and student information */
+.assignment-note {
+  margin-top: 55px;
+  padding: 12px 13px;
+  border: 1px solid #cbd9de;
+  border-radius: 9px;
+  background: #dfedf1;
+  color: #344d5c;
+  font-size: 13px;
+}
+
+.student-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid #c8dadd;
+}
+
+.student-details a {
+  color: var(--teal-light);
+  font-weight: 700;
+}
+
+.student-details a:hover {
+  text-decoration: underline;
+}
+
+.page-footer {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Responsive changes */
+@media (max-width: 760px) {
+  .page {
+    width: calc(100% - 32px);
+    margin-top: 20px;
+  }
+
+  .gallery-image {
+    min-height: 100px;
+  }
+
+  .dashboard {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+
+  .dashboard-header,
+  .dashboard-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 9px 12px;
+  }
+
+  .dashboard-header nav,
+  .dashboard-footer nav {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .learning-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .page {
+    width: calc(100% - 22px);
+    margin-top: 15px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .gallery-image {
+    min-height: 95px;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto minmax(300px, auto) auto;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    gap: 9px;
+  }
+
+  .dashboard-sidebar {
+    padding: 13px 16px;
+  }
+
+  .dashboard-sidebar h3 {
+    margin-bottom: 9px;
+  }
+
+  .dashboard-sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+
+  .dashboard-main {
+    padding: 14px;
+  }
+
+  .learning-cards {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .learning-card {
+    min-height: 82px;
+  }
+
+  .assignment-note {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 360px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
