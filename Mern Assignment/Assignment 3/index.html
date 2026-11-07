@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammar Anees</title>
+
+    <style>
+        :root {
+            --primary: #193e56;
+            --secondary: #dcebea;
+            --background: #edf3f6;
+            --border: #c5d7df;
+            --text: #193e56;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101820;
+            padding: 16px;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: var(--background);
+            padding: 35px;
+        }
+
+        .student-info {
+            background: #dcebef;
+            border-left: 5px solid #087b7c;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+
+        .student-info p {
+            font-size: 15px;
+            margin: 7px 0;
+            font-weight: bold;
+        }
+
+        .top-heading {
+            color: #087b7c;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #60798b;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 23px;
+            margin: 0 0 22px 5px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            font-size: 14px;
+        }
+
+        caption {
+            caption-side: bottom;
+            padding: 12px;
+            color: #60798b;
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 13px 9px;
+            text-align: left;
+        }
+
+        thead th {
+            background: var(--primary);
+            color: white;
+            font-weight: normal;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #edf4f7;
+        }
+
+        tbody tr:hover {
+            background: #d4e8e8;
+            transition: 0.2s;
+        }
+
+        .brand {
+            background: var(--secondary);
+            font-weight: bold;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        tfoot td {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+
+        .note {
+            margin-top: 55px;
+            padding: 16px;
+            background: #dcebef;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 18px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            table {
+                min-width: 850px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Student Details -->
+
+    <div class="student-info">
+        <p>Student Name: Ammar Anees</p>
+        <p>Student ID: BCS2026271</p>
+        <p>Course: B.Tech - Computer Science</p>
+        <p>Year: First Year</p>
+    </div>
+
+    <p class="top-heading">
+        BTECH YEAR 1 / HTML & CSS
+    </p>
+
+    <h1>The Big Styled Table</h1>
+
+    <p class="subtitle">
+        Week 4 · 16 Data Rows × 10 Columns · Expected Output
+    </p>
+
+    <h2>Campus Store - T-Shirt Size & Stock Chart</h2>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <caption>
+                T-Shirt Size and Stock Details of Different Brands.
+            </caption>
+
+            <thead>
+                <tr>
+                    <th rowspan="2" scope="col">Brand</th>
+                    <th rowspan="2" scope="col">SKU</th>
+                    <th rowspan="2" scope="col">Size</th>
+                    <th colspan="4" scope="colgroup">
+                        Measurements (inches)
+                    </th>
+                    <th rowspan="2" scope="col">Colour</th>
+                    <th rowspan="2" scope="col">Stock</th>
+                    <th rowspan="2" scope="col">Price</th>
+                </tr>
+
+                <tr>
+                    <th scope="col">Chest</th>
+                    <th scope="col">Waist</th>
+                    <th scope="col">Length</th>
+                    <th scope="col">Sleeve</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- Campus Brand -->
+
+                <tr>
+                    <th class="brand" rowspan="8" scope="rowgroup">
+                        Campus
+                    </th>
+                    <td>TS-01</td>
+                    <td>S</td>
+                    <td>36</td>
+                    <td>30</td>
+                    <td>26</td>
+                    <td>16</td>
+                    <td>Navy</td>
+                    <td>12</td>
+                    <td>₹499</td>
+                </tr>
+
+                <tr>
+                    <td>TS-02</td>
+                    <td>M</td>
+                    <td>38</td>
+                    <td>32</td>
+                    <td>27</td>
+                    <td>17</td>
+                    <td>White</td>
+                    <td>13</td>
+                    <td>₹519</td>
+                </tr>
+
+                <tr>
+                    <td>TS-03</td>
+                    <td>L</td>
+                    <td>40</td>
+                    <td>34</td>
+                    <td>28</td>
+                    <td>18</td>
+                    <td>Olive</td>
+                    <td>14</td>
+                    <td>₹539</td>
+                </tr>
+
+                <tr>
+                    <td>TS-04</td>
+                    <td>XL</td>
+                    <td>42</td>
+                    <td>36</td>
+                    <td>29</td>
+                    <td>16</td>
+                    <td>Black</td>
+                    <td>15</td>
+                    <td>₹559</td>
+                </tr>
+
+                <tr>
+                    <td>TS-05</td>
+                    <td>S</td>
+                    <td>36</td>
+                    <td>30</td>
+                    <td>26</td>
+                    <td>17</td>
+                    <td>Navy</td>
+                    <td>16</td>
+                    <td>₹579</td>
+                </tr>
+
+                <tr>
+                    <td>TS-06</td>
+                    <td>M</td>
+                    <td>38</td>
+                    <td>32</td>
+                    <td>27</td>
+                    <td>18</td>
+                    <td>White</td>
+                    <td>17</td>
+                    <td>₹599</td>
+                </tr>
+
+                <tr>
+                    <td>TS-07</td>
+                    <td>L</td>
+                    <td>40</td>
+                    <td>34</td>
+                    <td>28</td>
+                    <td>16</td>
+                    <td>Olive</td>
+                    <td>18</td>
+                    <td>₹619</td>
+                </tr>
+
+                <tr>
+                    <td>TS-08</td>
+                    <td>XL</td>
+                    <td>42</td>
+                    <td>36</td>
+                    <td>29</td>
+                    <td>17</td>
+                    <td>Black</td>
+                    <td>19</td>
+                    <td>₹639</td>
+                </tr>
+
+                <!-- Everyday Brand -->
+
+                <tr>
+                    <th class="brand" rowspan="8" scope="rowgroup">
+                        Everyday
+                    </th>
+                    <td>TS-09</td>
+                    <td>S</td>
+                    <td>36</td>
+                    <td>30</td>
+                    <td>26</td>
+                    <td>18</td>
+                    <td>Navy</td>
+                    <td>20</td>
+                    <td>₹659</td>
+                </tr>
+
+                <tr>
+                    <td>TS-10</td>
+                    <td>M</td>
+                    <td>38</td>
+                    <td>32</td>
+                    <td>27</td>
+                    <td>16</td>
+                    <td>White</td>
+                    <td>21</td>
+                    <td>₹679</td>
+                </tr>
+
+                <tr>
+                    <td>TS-11</td>
+                    <td>L</td>
+                    <td>40</td>
+                    <td>34</td>
+                    <td>28</td>
+                    <td>17</td>
+                    <td>Olive</td>
+                    <td>22</td>
+                    <td>₹699</td>
+                </tr>
+
+                <tr>
+                    <td>TS-12</td>
+                    <td>XL</td>
+                    <td>42</td>
+                    <td>36</td>
+                    <td>29</td>
+                    <td>18</td>
+                    <td>Black</td>
+                    <td>23</td>
+                    <td>₹719</td>
+                </tr>
+
+                <tr>
+                    <td>TS-13</td>
+                    <td>S</td>
+                    <td>36</td>
+                    <td>30</td>
+                    <td>26</td>
+                    <td>16</td>
+                    <td>Navy</td>
+                    <td>24</td>
+                    <td>₹739</td>
+                </tr>
+
+                <tr>
+                    <td>TS-14</td>
+                    <td>M</td>
+                    <td>38</td>
+                    <td>32</td>
+                    <td>27</td>
+                    <td>17</td>
+                    <td>White</td>
+                    <td>25</td>
+                    <td>₹759</td>
+                </tr>
+
+                <tr>
+                    <td>TS-15</td>
+                    <td>L</td>
+                    <td>40</td>
+                    <td>34</td>
+                    <td>28</td>
+                    <td>18</td>
+                    <td>Olive</td>
+                    <td>26</td>
+                    <td>₹779</td>
+                </tr>
+
+                <tr>
+                    <td>TS-16</td>
+                    <td>XL</td>
+                    <td>42</td>
+                    <td>36</td>
+                    <td>29</td>
+                    <td>16</td>
+                    <td>Black</td>
+                    <td>27</td>
+                    <td>₹799</td>
+                </tr>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="8">
+                        Total Stock - 16 Variants
+                    </td>
+                    <td>312</td>
+                    <td>INR</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </div>
+
+    <div class="note">
+        <strong>Assignment Details:</strong>
+        This table uses HTML caption, thead, tbody, tfoot,
+        rowspan, colspan and scoped headers.
+        CSS variables, striped rows, hover effects and
+        responsive design are also included.
+    </div>
+
+</div>
+
+</body>
+</html>
